@@ -1,0 +1,7 @@
+{
+  "largest": 268499993,
+  "count": 14634183,
+  "reach": 72092246241000049,
+  "format": "uint8-halfgaps-from-3",
+  "note": "primes[0]=2, primes[1:]=3+2*cumsum([0]+halfgaps)"
+}
