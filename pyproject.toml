@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sitoolz"
+version = "0.1.0"
+description = "Lars Rocha's number-theory playground, every module in one package: rails, lanes, climbs, folds, rule 30's edge law, the square family, the XOR build system and the XOR difference triangle."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Lars Rocha"}]
+dependencies = ["numpy>=1.24", "pandas>=2.0"]
+keywords = ["primes", "xor", "number-theory", "rule30", "sieve", "sierpinski"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.optional-dependencies]
+fast = ["gmpy2", "numba", "scipy"]
+sequence = ["sympy"]
+test = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/oppressionslayer/pytoolz"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+# primebase's net: every prime to 268,499,993 as half-gaps, 14.6 MB, which proves to 72 quadrillion
+"sitoolz.primebase" = ["data/base_gaps.npy", "data/meta.json"]
+# the showcase: the 19,538-digit prime, the twin hunts, a 4096-bit chain
+"sitoolz" = ["data/*.dat", "data/*.json"]
